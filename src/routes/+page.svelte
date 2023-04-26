@@ -4,7 +4,7 @@
 			w.length > 3 ? w.at(0) + (w.length - 2) + w.at(-1) : w,
 		)
 
-	let text = 'Write here'
+	let text = ''
 
 	$: translatedText = convert(text)
 </script>
@@ -14,7 +14,14 @@
 	<ul>
 		<li class="in">
 			<h2>Input:</h2>
-			<textarea name="" id="" cols="30" rows="10" bind:value={text} />
+			<textarea
+				placeholder="Write text that you want to accessibilityize here"
+				name=""
+				id=""
+				cols="30"
+				rows="10"
+				bind:value={text}
+			/>
 		</li>
 
 		<li class="out">
