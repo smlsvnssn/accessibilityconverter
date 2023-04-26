@@ -16,10 +16,6 @@
 			<h2>Input:</h2>
 			<textarea
 				placeholder="Write text that you want to accessibilityize here"
-				name=""
-				id=""
-				cols="30"
-				rows="10"
 				bind:value={text}
 			/>
 		</li>
@@ -40,6 +36,7 @@
 		justify-items: center;
 		align-items: center;
 		height: 100dvh;
+		margin: 1rem;
 	}
 	h1 {
 	}
@@ -48,13 +45,28 @@
 	ul {
 		list-style: none;
 		display: flex;
-		gap: 2rem;
+		gap: 1rem;
+		padding: 0;
 		margin: auto;
+	}
+
+	.out p {
+		border: 1px solid #ddd;
+		min-height: 6rem;
+		padding: 0.5rem;
+	}
+
+	li {
+		flex: 50%;
 	}
 	textarea {
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 			Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
 			sans-serif;
 		font-size: 1rem;
+		border: 1px solid #ddd;
+		width: calc(100% - 1rem);
+		min-height: 6rem;
+		padding: 0.5rem;
 	}
 </style>
