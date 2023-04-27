@@ -27,17 +27,36 @@
 	</ul>
 </main>
 
-<style>
+<style lang="scss">
+	@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@500&display=swap');
+	* {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
 	:global(body) {
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-			Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-			sans-serif;
+		--light: #f4ecec;
+		--dark: #131313;
+		--mid: #806d6d;
+		--bg: var(--light);
+		--text: var(--dark);
+		--border: var(--mid);
+		--font: 'Pathway Extreme', sans-serif;
+		--radius: 0.25rem;
+		@media (prefers-color-scheme: dark) {
+			--bg: var(--dark);
+			--text: var(--light);
+		}
+		font-family: var(--font);
+		color: var(--text);
+		background: var(--bg);
 		display: grid;
 		justify-items: center;
 		align-items: center;
 		height: 100dvh;
 		margin: 1rem;
 	}
+
 	h1 {
 	}
 	h2 {
@@ -51,7 +70,8 @@
 	}
 
 	.out p {
-		border: 1px solid #ddd;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
 		min-height: 6rem;
 		padding: 0.5rem;
 	}
@@ -60,13 +80,23 @@
 		flex: 50%;
 	}
 	textarea {
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-			Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-			sans-serif;
+		font-family: var(--font);
 		font-size: 1rem;
-		border: 1px solid #ddd;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		background: var(--bg);
 		width: calc(100% - 1rem);
 		min-height: 6rem;
 		padding: 0.5rem;
+		&:focus {
+			outline-color: var(--mid);
+		}
+		&::placeholder {
+			color: var(--border);
+			transition: all 0.3s;
+		}
+		&:focus::placeholder {
+			color: transparent;
+		}
 	}
 </style>
